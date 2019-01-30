@@ -1,0 +1,12 @@
+.vscode
+node_modules
+
+# Development Build
+build
+
+# Production Build
+dist
+
+*.log
+
+.DS_Store
