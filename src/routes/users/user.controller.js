@@ -1,4 +1,4 @@
-import { userService } from './users-service';
+import { userService } from './user.service';
 import { stringToStringArray, stringNumberToNumberArray } from '../../helpers/string-utils';
 
 
@@ -12,13 +12,13 @@ const authenticate = (req, res, next) => {
 
 const register = (req, res, next) => {
   userService.create(req.body)
-    .then(() => res.json({}))
+    .then((user) => res.json(user))
     .catch(err => next(err));
 }
 
 const getAll = (req, res, next) => {
   const { sort, range, filter } = req.query;
-  const querySort = sort ? stringToStringArray(sort) : ['username', 'ASC'];
+  const querySort = sort ? stringToStringArray(sort) : ['name', 'ASC'];
   const queryRange = range ? stringNumberToNumberArray(range) : [0, 9];
   const queryFilter = filter ? JSON.parse(filter) : { "q": "" };
 
@@ -29,8 +29,7 @@ const getAll = (req, res, next) => {
         'Access-Control-Expose-Headers': 'Content-Range'
       });
       res.json(users)
-    }
-    )
+    })
     .catch(err => next(err));
 }
 

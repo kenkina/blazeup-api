@@ -1,6 +1,6 @@
 import expressJwt from 'express-jwt';
 
-import { userService } from '../routes/users/users-service';
+import { userService } from '../routes/users/user.service';
 
 const config = require('./config.json');
 
@@ -14,7 +14,9 @@ export function jwt() {
       '/image',
       '/file',
       { url: '/users/authenticate', methods: ['POST'] },
-      { url: '/users', methods: ['POST'] }
+      { url: '/users', methods: ['POST'] },
+      { url: '/publicCategories', methods: ['GET'] },
+      { url: '/publicProducts', methods: ['GET'] }
     ]
   });
 }

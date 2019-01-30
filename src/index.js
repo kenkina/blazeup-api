@@ -10,9 +10,9 @@ import { errorHandler } from './helpers/error-handler';
 import publicFile from './public/files/index.zip';
 import publicImage from './public/images/template.png';
 import publicPage from './public/pages/index.html';
-import { userRouter } from "./routes/users/users-router";
+import { userRouter, categoryRouter, productRouter } from "./routes/index";
 
-const config = require('./helpers/config.json');
+//const config = require('./helpers/config.json');
 
 const app = express();
 
@@ -42,6 +42,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // api routes
 app.use('/users', userRouter);
+app.use('/categories', categoryRouter);
+app.use('/products', productRouter);
+
+app.use('/publicCategories', categoryRouter);
+app.use('/publicProducts', productRouter);
 
 // global error handler
 app.use(errorHandler);
