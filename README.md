@@ -10,12 +10,12 @@ Install dependencies
 npm i
 ```
 
-Start webpack with _watch mode_ and serve _build/index.js_ with [NodemonPlugin](https://github.com/Izhaki/nodemon-webpack-plugin) at [http://localhost:3000](http://localhost:3000)
+Start webpack with _watch mode_ and serve _build/index.js_ with [NodemonPlugin](https://github.com/Izhaki/nodemon-webpack-plugin) at [http://localhost:4000](http://localhost:4000)
 ```
 npm start
 ```
 
-Serve _build/index.js_ with nodemon at [http://localhost:3000](http://localhost:3000)
+Serve _build/index.js_ with nodemon at [http://localhost:4000](http://localhost:4000)
 ```
 npm run start-dev
 ```
@@ -25,7 +25,7 @@ Start webpack and use [UglifyJsPlugin](https://github.com/webpack-contrib/uglify
 npm run build-prod
 ```
 
-Serve _dist/index.js_ with node at [http://localhost:3000](http://localhost:3000)
+Serve _dist/index.js_ with node at [http://localhost:4000](http://localhost:4000)
 ```
 node dist/index.js
 ```
