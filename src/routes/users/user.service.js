@@ -11,6 +11,7 @@ const authenticate = async ({ username, password }) => {
   if (user && bcrypt.compareSync(password, user.hash)) {
     const token = jwt.sign({ sub: user.id }, config.jwtSecret, { expiresIn: config.expiresIn });
     return {
+      id: user.id,
       username: user.toObject().username,
       token
     };

@@ -90,7 +90,7 @@ app.all('*', (req, res) => {
 
 
 // start server
-const port = process.env.NODE_ENV === 'production' ? (process.env.PORT || 80) : 4000;
+const port = 8080;
 app.listen(port, () => {
 
   if (process.env.NODE_ENV !== 'production') {

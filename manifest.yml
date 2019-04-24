@@ -1,0 +1,5 @@
+---
+applications:
+ - name: blaze-up-api
+   random-route: true
+   memory: 256M

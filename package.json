@@ -4,9 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack --config ./webpack.dev.js",
-    "start-dev": "nodemon ./build/index.js",
-    "build-prod": "webpack --config ./webpack.prod.js"
+    "start-dev": "webpack --config ./webpack.dev.js",
+    "start-run-dev": "nodemon ./build/index.js",
+    "test": "mocha ./tests --require @babel/register --exit --recursive --no-timeout",
+    "build": "webpack --config ./webpack.prod.js",
+    "start": "node ./dist/index.js"
   },
   "keywords": [],
   "author": "kenkina",
@@ -14,8 +16,14 @@
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.2.3",
+    "@babel/register": "^7.4.0",
+    "axios": "^0.18.0",
     "babel-loader": "^8.0.5",
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.1",
+    "express-oas-generator": "^1.0.7",
     "file-loader": "^3.0.1",
+    "mocha": "^6.1.4",
     "nodemon": "^1.18.9",
     "nodemon-webpack-plugin": "^4.0.7",
     "uglifyjs-webpack-plugin": "^2.1.1",

@@ -1,6 +1,5 @@
-const path = require('path');
-const nodeExternals = require('webpack-node-externals'); // Exclude node_modules
-const SOURCE_PATH = path.join(__dirname, 'src', 'index.js');
+const nodeExternals = require('webpack-node-externals'); // Exclude node_module
+
 
 module.exports = {
   target: 'node',
@@ -8,7 +7,6 @@ module.exports = {
     __dirname: false,
     __filename: false,
   },
-  entry: SOURCE_PATH,
   externals: [nodeExternals()],
   module: {
     rules: [

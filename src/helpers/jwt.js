@@ -13,7 +13,10 @@ export function jwt() {
       '/greetings',
       '/image',
       '/file',
+      { url: '/api-docs', methods: ['GET'] },
+      '/api-spec',
       { url: '/users/authenticate', methods: ['POST'] },
+      { url: '/users', methods: ['GET'] },
       { url: '/users', methods: ['POST'] },
       { url: '/publicCategories', methods: ['GET'] },
       { url: '/publicProducts', methods: ['GET'] }

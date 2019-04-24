@@ -1,5 +1,5 @@
 {
-  "connectionString": "mongodb://kenkina:ds131480@ds131480.mlab.com:31480/defiant-db",
+  "connectionString": "mongodb://kenkina:ds111025@ds111025.mlab.com:11025/defiant-db",
   "jwtSecret": "545d1f3b66a1b74cdKuHPmepiP6136d7e78309cdKuHPmepiP0a1a34323efgaaa",
   "baseUrl": "/api/v1",
   "expiresIn": "1d"

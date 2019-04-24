@@ -33,14 +33,14 @@ const getAll = (req, res, next) => {
     .catch(err => next(err));
 }
 
-const getCurrent = (req, res, next) => {
-  userService.getById(req.user.sub)
+const getById = (req, res, next) => {
+  userService.getById(req.params.id)
     .then(user => user ? res.json(user) : res.sendStatus(404))
     .catch(err => next(err));
 }
 
-const getById = (req, res, next) => {
-  userService.getById(req.params.id)
+const getCurrent = (req, res, next) => {
+  userService.getById(req.user.sub)
     .then(user => user ? res.json(user) : res.sendStatus(404))
     .catch(err => next(err));
 }

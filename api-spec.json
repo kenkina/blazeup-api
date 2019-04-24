@@ -1,0 +1,166 @@
+{
+  "info": {
+    "title": "blazeup-api",
+    "version": "1.0.0",
+    "license": {
+      "name": "ISC"
+    },
+    "description": "Blazeup API"
+  },
+  "paths": {
+    "/users/authenticate": {
+      "post": {
+        "summary": "/users/authenticate",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "example": "5ca7df7c5729210e2430f069"
+                },
+                "username": {
+                  "type": "string",
+                  "example": "ray"
+                },
+                "token": {
+                  "type": "string",
+                  "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Y2E3ZGY3YzU3MjkyMTBlMjQzMGYwNjkiLCJpYXQiOjE1NTU4ODkzNTYsImV4cCI6MTU1NTk3NTc1Nn0.kywWyuSGV8vGNEmJX-4iIDOebNhrI5A3wRf4z7Q5Qrg"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users": {
+      "get": {
+        "summary": "/users",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "_id": {
+                    "type": "string"
+                  },
+                  "username": {
+                    "type": "string"
+                  },
+                  "firstName": {
+                    "type": "string"
+                  },
+                  "lastName": {
+                    "type": "string"
+                  },
+                  "createdDate": {
+                    "type": "string"
+                  },
+                  "__v": {
+                    "type": "number"
+                  },
+                  "id": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/{id}": {
+      "get": {
+        "summary": "/users/{id}",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "produces": [
+          "application/json",
+          "text/plain"
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "_id": {
+                  "type": "string",
+                  "example": "5ca7df7c5729210e2430f069"
+                },
+                "username": {
+                  "type": "string",
+                  "example": "ray"
+                },
+                "firstName": {
+                  "type": "string",
+                  "example": "Ray"
+                },
+                "lastName": {
+                  "type": "string",
+                  "example": "Gracefield"
+                },
+                "createdDate": {
+                  "type": "string",
+                  "example": "2019-04-05T23:06:36.748Z"
+                },
+                "__v": {
+                  "type": "number",
+                  "example": 0
+                },
+                "id": {
+                  "type": "string",
+                  "example": "5ca7df7c5729210e2430f069"
+                }
+              }
+            }
+          },
+          "404": {
+            "schema": {
+              "type": "string",
+              "example": "Not Found"
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "/users/{id}",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ]
+      }
+    }
+  },
+  "swagger": "2.0"
+}
